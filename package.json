@@ -2,8 +2,9 @@
   "name": "backend",
   "version": "0.0.0",
   "private": true,
+  "main": "api/handler.js",
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "start": "node api/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "echo build complete"
   },
