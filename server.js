@@ -5,16 +5,16 @@ const cors = require('cors');
 const https = require('https');
 
 // DB connection function
-const connection = require('../config/db');
+const connection = require('./config/db');
 
 // Routes
-const userRoutes = require('../routes/users');
-const authRoutes = require('../routes/auth');
-const bookRoutes = require('../routes/books');
-const exchangeRoutes = require('../routes/exchanges');
+const userRoutes = require('./routes/users');
+const authRoutes = require('./routes/auth');
+const bookRoutes = require('./routes/books');
+const exchangeRoutes = require('./routes/exchanges');
 
 // User model
-const User = require('../models/user');
+const User = require('./models/user');
 
 // Test HTTPS request
 https.get('https://www.google.com', (res) => {
@@ -32,6 +32,8 @@ app.use(
       'https://lithub-frontend.vercel.app',
       'http://localhost:5173'
     ],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
